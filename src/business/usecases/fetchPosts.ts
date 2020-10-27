@@ -1,12 +1,11 @@
-import { Observable, of } from 'rxjs';
 import Post from '../domain/post';
 
 export default class FetchPosts{
 
     constructor(){}
 
-    getAllPosts(): Observable<Post[]> {
-        return of([{
+    getAllPosts(): Post[] {
+        return [{
             userId: 1,
             id: 1,
             title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -23,7 +22,7 @@ export default class FetchPosts{
             id: 3,
             title: "ea molestias quasi exercitationem repellat qui ipsa sit aut",
             body: "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-          }]);
+          }];
     }// getAllPosts()
 
 }// FetchPosts
