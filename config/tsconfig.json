@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "noEmit": true, // empêche la création de fichiers js et js.map
+      "preserveConstEnums": true,
+      "removeComments": true,
+      "sourceMap": false,
+      "target": "es6",
+      "types": ["node", "jest"]
+    },
+    "include": [
+      "../src/**/*",
+      "../tests/**/*"
+    ],
+    "exclude": [
+      "index.js",
+      "build",
+      "node_modules",
+      "coverage",
+      "ios",
+      "android",
+      "jest",
+      "./*.js"
+    ],
+    "compileOnSave": false
+  
+}
