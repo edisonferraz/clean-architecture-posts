@@ -13,6 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { expect, describe, beforeEach, it } from '@jest/globals';
+import {} from 'jasmine';
+
 import Post from '../../src/business/domain/post';
 import ApiPosts from '../../src/business/ports/apiPosts';
 import FetchPosts from '../../src/business/usecases/FetchPosts';
@@ -27,7 +30,7 @@ describe('FetchPosts UT', () => {
     beforeEach(() => {
         fetchPosts = new FetchPosts(api);
         spyOn(api, 'findAll').and.returnValue(new Promise<Post[]>((accept) => accept(getPostsFromBackEnd())));
-        spyOn(api, 'findById').and.callFake((id) => {
+        spyOn(api, 'findById').and.callFake((id: number) => {
             if(id === 1){
                 return new Promise<Post>((accept) => accept(getPostsFromBackEnd()[0]));
             }else {

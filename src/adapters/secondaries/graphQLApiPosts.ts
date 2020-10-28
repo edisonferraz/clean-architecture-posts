@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { rejects } from 'assert';
 import fetch from 'node-fetch';
 import Post from '../../business/domain/post';
 import ApiPosts from '../../business/ports/apiPosts';
@@ -30,7 +29,7 @@ export default class GraphQLApiPosts implements ApiPosts{
             return (json && json.data && json.data.posts && json.data.posts.data) ? json.data.posts.data : [];
         }catch(err){
             console.error(err);
-            rejects(err);
+            throw err;
         }
     }// findAll()
 
@@ -48,7 +47,7 @@ export default class GraphQLApiPosts implements ApiPosts{
             return null;
         }catch(err){
             console.error(err);
-            rejects(err);
+            throw err;
         }
     }// findById()
 
