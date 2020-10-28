@@ -84,7 +84,7 @@ Some cons :
 
 Hexagonal architecture used by this project : 
 
-![Architecture](img/architecture.jpg)
+![Architecture](img/architecture.png)
 
 ### Where can i change adapters around the business logic in the user application ?
 
