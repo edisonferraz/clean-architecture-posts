@@ -4,7 +4,8 @@
   "description": "clean architecture / hexagonal architecture - FrontEnd",
   "main": "index.js",
   "scripts": {
-    "test": "tsc -p ./config/tsconfig.json && jest --config ./config/jest.config.js"
+    "test:build": "tsc -p ./config/tsconfig.json && jest --config ./config/jest.config.js",
+    "test": "tsc -p ./config/tsconfig.json && jest --config ./config/jest.config.js --watchAll"
   },
   "repository": {
     "type": "git",
