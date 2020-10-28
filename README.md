@@ -1,4 +1,4 @@
-# clean-architecture-albums
+# clean-architecture-posts
 
 clean architecture / hexagonal architecture - FrontEnd
 
