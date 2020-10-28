@@ -33,12 +33,12 @@ export default class FetchPosts{
      * 50 caracters max followed by ...
      * @return Promise<Post[]>
      */
-    async getAllPosts(): Promise<Post[]> {
+    getAllPosts = async(): Promise<Post[]> => {
       const postsFromApi = await this.api.findAll();
       return postsFromApi.map(post => ({...post, body: `${post.body.substring(0, this.sizeBody)}...` }));
     }// getAllPosts()
 
-    async findById(id: number): Promise<Post> {
+    findById = async(id: number): Promise<Post> => {
       if(id === undefined && id === null){
         return new Promise((accept, reject) => reject(new ArgumentException('Post ID is mandatory')));
       }

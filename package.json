@@ -41,8 +41,10 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@types/node-fetch": "^2.5.7",
     "crossenv": "0.0.2-security",
     "dotenv-webpack": "^4.0.0",
+    "node-fetch": "^2.6.1",
     "rxjs": "^6.6.3"
   }
 }
