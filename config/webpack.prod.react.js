@@ -2,20 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const htmlPageNames = ['post'];
-let multipleHtmlPlugins = htmlPageNames.map(name => {
-  return new HtmlWebpackPlugin({
-    template: `./src/adapters/primaries/vanilla/html/${name}.html`,
-    filename: `${name}.html`
-  })
-});
-
 const config = {
     resolve: {
         extensions: [".ts", ".js", "json"]
     },
-    entry: [ path.resolve('./src/adapters/primaries/vanilla/js/app.js') ],
-    mode: 'production',
+    entry: ['@babel/polyfill', path.resolve('./src/adapters/primaries/react/index.js') ],
+    mode: 'development',
     output: {
         path: path.resolve('./dist'),
         filename: 'bundle.js',
@@ -24,7 +16,17 @@ const config = {
     optimization: { minimize: true },
     module: {
         rules: [
-            { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+            {
+                test: /\.js?$/,
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ["@babel/preset-env","@babel/preset-react"],
+                        plugins: ["@babel/plugin-proposal-class-properties"],
+                    }
+                }],
+                exclude: /node_modules/
+            },
             { test: /\.ts?$/, exclude: /node_modules/, use: ['awesome-typescript-loader'] },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
@@ -32,13 +34,13 @@ const config = {
         ]
     },
     plugins: [new HtmlWebpackPlugin({
-        template: `./src/adapters/primaries/vanilla/html/index.html`,
+        template: `./src/adapters/primaries/react/index.html`,
         filename: 'index.html',
     }),
     new webpack.EnvironmentPlugin({
         NODE_ENV: 'development',
-        API: 'rest'
-    })].concat(multipleHtmlPlugins)
+        API: 'graphql'
+      })]
 };
 
 module.exports = config;

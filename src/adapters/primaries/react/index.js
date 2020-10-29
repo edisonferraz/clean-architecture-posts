@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module.exports = {
-    rootDir: "../",
-    roots: ['<rootDir>'],
-    transform: {
-      '^.+\\.ts?$': 'ts-jest',
-      '^.+\\.(js|jsx)?$': 'babel-jest'
-    },
-    testRegex: '(../tests/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-    testPathIgnorePatterns: ['../tests/stubs/'],    
-    moduleFileExtensions: ['ts', 'js', 'json', 'node'],
-    collectCoverage: true,
-    clearMocks: true,
-    coverageDirectory: "coverage",
-};
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);

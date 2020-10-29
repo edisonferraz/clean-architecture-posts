@@ -6,6 +6,8 @@
   "scripts": {
     "start:vanilla": "webpack-dev-server --config ./config/webpack.dev.vanilla.js --progress",
     "build:vanilla": "webpack --config ./config/webpack.prod.vanilla.js",
+    "start:react": "webpack-dev-server --config ./config/webpack.dev.react.js --progress",
+    "build:react": "webpack --config ./config/webpack.prod.react.js",
     "test:build": "tsc -p ./config/tsconfig.json && jest --config ./config/jest.config.js",
     "test": "tsc -p ./config/tsconfig.json && jest --config ./config/jest.config.js --watchAll"
   },
@@ -21,14 +23,20 @@
   "homepage": "https://github.com/yassineazimani/clean-architecture-posts#readme",
   "devDependencies": {
     "@angular/common": "^10.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.5",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^5.0.0",
     "dotenv-webpack": "^4.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "jasmine": "^3.6.2",
@@ -45,12 +53,22 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "@types/jasmine": "^3.6.0",
     "@types/node-fetch": "^2.5.7",
+    "babel-jest": "^26.6.1",
+    "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^7.0.2",
-    "crossenv": "0.0.2-security",
     "node-env-webpack-plugin": "^1.1.0",
     "node-fetch": "^2.6.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-test-render": "^1.1.2",
     "rxjs": "^6.6.3",
     "sass": "^1.27.0"
   }
