@@ -27,6 +27,7 @@ To start Vanilla (Javascript native) app :
 To start React app :
 
 ```bash
+    npm run start:react
 ```
 
 To start Angular app :
@@ -43,6 +44,7 @@ To build Vanilla (Javascript native) app for production :
 To build React app for production :
 
 ```bash
+    npm run build:react
 ```
 
 To build Angular app for production :
