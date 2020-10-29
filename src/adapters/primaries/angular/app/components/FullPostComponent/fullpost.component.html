@@ -1,0 +1,5 @@
+<div class="post">
+    <h2 *ngIf="post && post.title">{{ post.title }}</h2>
+    <p *ngIf="post && post.body">{{ post.body }}</p>
+    <a class="btn btn-read-more" [routerLink]="['']">Retour</a>
+</div>

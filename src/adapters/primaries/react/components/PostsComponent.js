@@ -21,6 +21,7 @@ export default class PostsComponent extends React.Component{
     }
 
     render = () => (<section id="posts">
+        <h1>Some posts</h1>
         { this.state.posts.map(post => <PostComponent key={post.id} id={post.id} body={post.body} title={post.title}  />) }
     </section>)
 

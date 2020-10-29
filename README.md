@@ -33,6 +33,7 @@ To start React app :
 To start Angular app :
 
 ```bash
+    npm run start:angular
 ```
 
 To build Vanilla (Javascript native) app for production :
@@ -50,6 +51,7 @@ To build React app for production :
 To build Angular app for production :
 
 ```bash
+    npm run build:angular
 ```
 
 ### Description project
@@ -65,7 +67,7 @@ The user can read a post's details by clicking on a post's button read more...
 ### Hexagonal architecture
 
 Thanks to the hexagonal architecture, we can focus only in the business logic of the application without knowing 
-frameworks, libraries used. Indeed, what matter if it is a REST API or a GRAPHQL API or Cloud API (Firebase, Amazon...), the business logic will stay the same without edit it. The philosophy stays the same with "tools frontal" like Angular, React, VueJS...
+frameworks, libraries used. Indeed, what matter if it is a REST API or a GRAPHQL API or Cloud API (Firebase, Amazon...), the business logic will stay the same without change it. The philosophy stays the same with "tools frontal" like Angular, React, VueJS...
 If tomorrow, i want to switch React by Angular without change the business logic or
 the API layer, i can do it and easily ! This is the power of the hexagonal architecture.
 Moreover, thanks to the hexagonal architecture, you can focus easily on TDD and BDD (DDD too, i didn't use it in this project).

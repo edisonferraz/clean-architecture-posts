@@ -38,7 +38,7 @@ const config = {
         filename: 'index.html',
     }),
     new webpack.EnvironmentPlugin({
-        NODE_ENV: 'development',
+        NODE_ENV: 'production',
         API: 'graphql'
       })]
 };

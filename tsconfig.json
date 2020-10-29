@@ -16,14 +16,18 @@
 {
     "compilerOptions": {
       "jsx": "react",
+      "allowJs": true,
       "module": "commonjs",
       "moduleResolution": "node",
       "noImplicitAny": true,
       "noEmit": true, // empêche la création de fichiers js et js.map
+      "emitDecoratorMetadata": true, // angular
+      "experimentalDecorators": true, // angular
       "preserveConstEnums": true,
       "removeComments": true,
       "sourceMap": false,
       "target": "es6",
+      "types": [ "node", "jest" ],
       "typeRoots": ["node_modules/@types"]
     },
     "include": [
@@ -40,5 +44,4 @@
       "jest",
     ],
     "compileOnSave": false
-  
 }
